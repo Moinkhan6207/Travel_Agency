@@ -1,4 +1,4 @@
-/* Reset */
+/* index.html, Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,45 +10,82 @@ body {
   background: #f9f9f9;
   line-height: 1.6;
   color: #0073e6;
+  padding: 0 10px;
 }
 
- /* Navbar  */
- /* nav {
-  position: sticky;
+nav {
   top: 0;
   background: #0073e6;
   padding: 15px;
   display: flex;
   justify-content: center;
-  gap: 20;
-} */
+  gap: 20px;
+  position: sticky;
+  z-index: 1000;
+}
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #f39c12;
 }
+
+/* Default (Laptop & Tablet) */
+/* nav {
+  background: linear-gradient(90deg, #1d3557, #457b9d);
+  padding: 15px;
+  text-align: center;
+} */
+
+/* nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  color: #f1faee;
+} */
+
+/* Mobile ke liye (max-width: 768px) */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    overflow-x: auto;   /* 👈 scroll enable hoga */
+    white-space: nowrap; /* 👈 links ek line me rahenge */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling */
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  nav a {
+    flex: 0 0 auto;     /* links ek sath shrink na ho */
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+
 
 /* Hero Section */
 .hero {
-  background: url("/assets/paris-city-lights.jpg") no-repeat center/cover;
+  background: url("../assets/paris-city-lights.jpg") no-repeat center/cover;
   color: rgb(255, 255, 255);
   margin-top: 25px;
   text-align: center;
-  color: black;
-  width: 100%;
-  top: 100px;
-
   padding: 100px 20px;
+  border-radius: 8px;
 }
 
 .hero h1 {
   font-size: 3rem;
-  color: white;
+  margin-bottom: 10px;
 }
 
 .hero button {
@@ -60,6 +97,7 @@ nav a:hover {
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .hero button:hover {
@@ -95,6 +133,7 @@ nav a:hover {
   justify-content: center;
   gap: 20px;
   padding: 30px;
+  flex-wrap: wrap;
 }
 
 .testimonial {
@@ -103,9 +142,11 @@ nav a:hover {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   flex: 1;
+  min-width: 250px;
+  text-align: center;
 }
 
-/* Reset & Global Styles */
+/*  contact.html, Reset & Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -120,28 +161,7 @@ body {
   padding: 0 10px;
 }
 
-/* Navbar */
-nav {
-  top:0;
-  background: #0073e6;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  position: sticky;
-  z-index: 1000;
-}
 
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #f39c12;
-}
 
 /* Contact Form */
 .contact-form {
@@ -168,6 +188,7 @@ nav a:hover {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 14px;
 }
 
 .contact-form input[type="radio"],
@@ -175,6 +196,34 @@ nav a:hover {
   width: auto;
   margin-right: 5px;
 }
+
+.monthsname {
+  display: flex;             /* flex layout banayega */
+  align-items: center;       /* label aur inputs vertically center */
+  gap: 15px;                 /* items ke beech thoda space */
+  margin: 10px 0;            /* upar neeche thoda spacing */
+}
+
+.monthsname .title {
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+
+.monthsname label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: normal;
+  gap: 5px;        /* label ke baad thoda gap */
+}
+
+.monthsname input[type="radio"] {
+  margin-right: 5px;     
+}  
+  
+
 
 .contact-form button {
   padding: 12px;
@@ -257,6 +306,8 @@ footer {
   border: 1px solid #ddd;
 }
 
+
+
 .contact-form button {
   width: 100%;
   padding: 12px;
@@ -304,3 +355,598 @@ footer {
     flex-direction: column;
   }
 }
+
+
+
+/*  Blog.html,General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Hero Section */
+.blog-hero {
+  background: url("../assets/paris-city-lights.jpg") center/cover no-repeat;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 25px;
+  padding: 60px 20px;
+  border-radius: 10px;
+  
+}
+
+.blog-hero h1 {
+  font-size: 2.5rem;
+}
+
+.blog-hero p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.blog-hero input {
+  margin-top: 15px;
+  padding: 10px;
+  width: 300px;
+  max-width: 90%;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Blog Layout */
+.blog-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 15px;
+  margin-top: 25px;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 10px 0 20px;
+}
+
+.sidebar ul li {
+  margin: 5px 0;
+}
+
+/* Subscribe */
+.sidebar input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Posts */
+.posts {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.post {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.post h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.post p {
+  font-size: 14px;
+  color: #666;
+}
+
+.post button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+  margin-top: 30px;
+}
+
+/* ===================== */
+/*   Responsive Design   */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .blog-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: 2; /* sidebar niche chala jayega */
+  }
+
+  .posts {
+    order: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .blog-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .blog-hero p {
+    font-size: 14px;
+  }
+
+  .blog-hero input {
+    width: 90%;
+  }
+
+  .posts {
+    grid-template-columns: 1fr; /* ek column */
+  }
+
+  .sidebar {
+    padding: 15px;
+  }
+}
+
+
+/*  Book.html, General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f6ff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/*  Container */
+.booking-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.booking-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff6600;
+}
+
+/* Form Styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+button {
+  grid-column: span 2;
+  padding: 12px;
+  background: #ff6600;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e55a00;
+}
+
+/* ===================== */
+/*   Responsive Design   */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr; /* ek column */
+  }
+
+  button {
+    grid-column: span 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  input, select, textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+
+/* Review.html, Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fbff;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+.review-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.review-container h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ff6600;
+}
+
+/* Review Cards */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.review-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.review-card h3 {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.stars {
+  color: #f1c40f;
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+
+.review-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ===================== */
+/*   Responsive Design   */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .review-card {
+    padding: 15px;
+  }
+
+  .review-card p {
+    font-size: 13px;
+  }
+}
+
+
+/*  About.html, Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Gallery Container */
+.gallery-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff6600;
+}
+
+/* Grid Layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/*   Responsive Design   */
+/* ===================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .gallery-container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.about {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 32px;
+  color: #1d3557;
+  margin-bottom: 15px;
+}
+
+.about h3 {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #457b9d;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.about ul li {
+  background: #f1faee;
+  margin: 10px auto;
+  padding: 12px;
+  max-width: 400px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #1d3557;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.about ul li:hover {
+  background: #ffb703;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ---------- Team Section ---------- */
+.team {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  flex-wrap: wrap;  /* responsive ke liye */
+}
+
+.member {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;  /* fix size but crop properly */
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.member img:hover {
+  transform: scale(1.1);
+}
+
+.member h4 {
+  font-size: 20px;
+  color: #1d3557;
+  margin: 10px 0 5px;
+}
+
+.member p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .about {
+    padding: 10px;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+

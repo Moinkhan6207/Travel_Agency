@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Destinations</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="book.html">Book</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="review.html">reviews</a>
+  </nav>
+
+    <!-- gallery.html -->
+<section class="gallery">
+  <h2>Travel Memories</h2>
+
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('beach')">Beaches</button>
+    <button onclick="filterGallery('mountain')">Mountains</button>
+    <button onclick="filterGallery('city')">Cities</button>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="gallery-grid">
+    <div class="gallery-item beach">
+      <img src="./assets/beautiful-beach-free-image-after-sunset-sky-picjumbo-com.jpeg" alt="Beach">
+      <div class="caption">Maldives Beach</div>
+    </div>
+
+    <div class="gallery-item mountain">
+      <img src="./assets/Mountain_ntFmJUZ8tw3ULD3tkBaAtf.jpg" alt="Mountains">
+      <div class="caption">Swiss Alps</div>
+    </div>
+
+    <div class="gallery-item city">
+      <img src="./assets/paris-city-lights.jpg" alt="City View">
+      <div class="caption">Paris Eiffel Tower</div>
+    </div>
+
+    <div class="gallery-item beach">
+      <img src="./assets/goa_sunsetFind-the-Best-Beaches-for-Sunset-in-Goa-1200x800.jpg" alt="Beach">
+      <div class="caption">Goa Sunset</div>
+    </div>
+
+    <div class="gallery-item mountain">
+      <img src="./assets/manali _hillshq720.jpg" alt="Forest">
+      <div class="caption">Manali Hills</div>
+    </div>
+
+    <div class="gallery-item city">
+      <img src="./assets/new_york_skyline-533998713-612x612.jpg" alt="New York">
+      <div class="caption">New York Skyline</div>
+    </div>
+  </div>
+</section>
+
+<!-- Small JS for Filter -->
+<script>
+  function filterGallery(category) {
+    let items = document.querySelectorAll(".gallery-item");
+    items.forEach(item => {
+      if (category === "all" || item.classList.contains(category)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  }
+</script>
+
+    
+</body>
+</html>
+
