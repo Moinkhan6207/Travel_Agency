@@ -6,145 +6,182 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   background: #f9f9f9;
   line-height: 1.6;
-  color: #0073e6;
-  padding: 0 10px;
+  color: #333;
 }
 
-nav {
-  top: 0;
-  background: #0073e6;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* Navbar */
+.navbar {
   position: sticky;
+  top: 0;
   z-index: 1000;
+  background: linear-gradient(90deg, #0073e6, #005bb5) ;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+.logo {
+  color: #fff;
+  font-size: 22px;
   font-weight: bold;
-  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* ✅ Mobile ke liye special scroll/drag effect */
+@media (max-width: 768px) {
+  .logo {
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: auto;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling for iOS */
+    max-width: 150px; /* jitna space dena hai utna */
+  }
+  .logo:active {
+    cursor: grabbing;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
   transition: 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #f39c12;
 }
 
-/* Default (Laptop & Tablet) */
-/* nav {
-  background: linear-gradient(90deg, #1d3557, #457b9d);
-  padding: 15px;
-  text-align: center;
-} */
-
-/* nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-nav a:hover {
-  color: #f1faee;
-} */
-
-/* Mobile ke liye (max-width: 768px) */
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    overflow-x: auto;   /* 👈 scroll enable hoga */
-    white-space: nowrap; /* 👈 links ek line me rahenge */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling */
-    justify-content: flex-start;
-    gap: 10px;
-  }
-
-  nav a {
-    flex: 0 0 auto;     /* links ek sath shrink na ho */
-    margin: 0 10px;
-    font-size: 16px;
-  }
-}
-
-
-/* Hero Section */
+/* Hero */
 .hero {
-  background: url("../assets/paris-city-lights.jpg") no-repeat center/cover;
-  color: rgb(255, 255, 255);
-  margin-top: 25px;
   text-align: center;
-  padding: 100px 20px;
-  border-radius: 8px;
+  padding: 80px 20px;
+  background: url("../assets/beautiful-beach-free-image-after-sunset-sky-picjumbo-com.jpeg") no-repeat center/cover;
+  color: white;
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
-.hero button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  background: #ff6600;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  padding: 12px 25px;
+  background: #f39c12;
   border: none;
-  color: #fff;
-  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.hero button:hover {
-  background: #e65c00;
+.btn-primary:hover {
+  background: #d35400;
 }
 
-/* Grid for Destinations */
+/* Sections */
+.section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.section h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #0073e6;
+}
+
+/* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 30px;
-  
+  padding: 0 20px;
 }
 
 .card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 15px;
-  text-align: center;
-  
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 12px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 5px;
+}
+
+.card p {
+  padding: 0 10px 20px;
+  color: #555;
 }
 
 /* Testimonials */
 .testimonials {
   display: flex;
-  justify-content: center;
   gap: 20px;
-  padding: 30px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .testimonial {
   background: #fff;
+  border-radius: 8px;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  flex: 1;
-  min-width: 250px;
-  text-align: center;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0073e6;
+  color: white;
+  margin-top: 30px;
+}
+
+/* Responsive Navbar - Mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 15px;
+  }
+  .nav-links a {
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
 
 /*  contact.html, Reset & Global Styles */
 * {
